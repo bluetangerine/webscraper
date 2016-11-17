@@ -1,0 +1,7 @@
+.class/
+target/
+*.iml
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+/.idea
