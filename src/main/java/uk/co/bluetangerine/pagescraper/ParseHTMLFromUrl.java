@@ -56,12 +56,13 @@ class ParseHTMLFromUrl {
      * Parse the main parent page. Parses main parent page to
      * extract Title and unit price also keep a running total.
      * Calls the child page method to populate rest of dto fields.
+     * Access modifier defaulted to package private to allow testing
      *
      * @param url Url for the parent page
      * @return populated ResultsDto object
      * @throws IOException
      */
-    private ResultsDto parseToDto(String url) throws IOException {
+    ResultsDto parseToDto(String url) throws IOException {
         //Create one resultsDto to contain all products found
         //and provide a running total
         ResultsDto resultsDto = new ResultsDto();
@@ -98,12 +99,12 @@ class ParseHTMLFromUrl {
      * Parse the child page. Parses child page to
      * extract description and size and populate
      * remaining fields on the Dto.
-     * Access modifier set to protected to allow unit testing
+     * Access modifier defaulted to package private to allow unit testing
      *
      * @param childUrl Url for the child page
      * @return ProductDto new copy of product DTO with additional fields populated
      */
-    private SubProductDto parseSubPageUrl(String childUrl) throws IOException {
+    SubProductDto parseSubPageUrl(String childUrl) throws IOException {
         SubProductDto result = new SubProductDto();
         Document doc = docHelper.getDocumentHelper(childUrl);
 
